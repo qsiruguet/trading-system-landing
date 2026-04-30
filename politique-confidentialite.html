@@ -271,9 +271,127 @@
 
     footer a { color: var(--green); }
 
+    /* ── DROITS CARDS ── */
+    .droits-intro {
+      background: rgba(34,211,165,0.05);
+      border: 1px solid rgba(34,211,165,0.15);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 32px;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .droits-intro .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .droits-intro .meta-item { display: flex; flex-direction: column; gap: 4px; }
+    .droits-intro .meta-key { font-size: 11px; color: var(--green); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+    .droits-intro .meta-val { font-size: 13px; color: var(--gray-light); }
+
+    .right-card {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .right-card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 24px;
+      background: rgba(255,255,255,0.03);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .right-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: rgba(34,211,165,0.15);
+      color: var(--green);
+      border-radius: 50%;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .right-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .right-article {
+      font-size: 12px;
+      color: var(--gray);
+      font-weight: 400;
+      margin-left: 4px;
+    }
+
+    .right-body { padding: 20px 24px; display: flex; flex-direction: column; gap: 14px; }
+
+    .right-row { display: grid; grid-template-columns: 140px 1fr; gap: 12px; font-size: 14px; }
+    .right-label { color: var(--green); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; padding-top: 2px; }
+    .right-value { color: var(--gray-light); line-height: 1.65; }
+
+    .example-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-left: 3px solid rgba(34,211,165,0.4);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.7;
+      margin-top: 4px;
+    }
+
+    .example-box strong { color: var(--gray-light); }
+
+    /* Template email */
+    .template-section {
+      margin-top: 40px;
+      border: 1px solid rgba(251,191,36,0.2);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .template-header {
+      background: rgba(251,191,36,0.06);
+      padding: 16px 24px;
+      border-bottom: 1px solid rgba(251,191,36,0.15);
+      font-size: 13px;
+      font-weight: 700;
+      color: #fbbf24;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .template-body {
+      padding: 24px;
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.8;
+    }
+
+    .template-body strong { color: var(--gray-light); }
+    .template-body ul { padding-left: 20px; margin: 10px 0; display: flex; flex-direction: column; gap: 6px; }
+    .template-body blockquote { font-style: italic; color: var(--gray); }
+
     @media (max-width: 600px) {
       .data-table { font-size: 13px; }
       .data-table th, .data-table td { padding: 10px 12px; }
+      .droits-intro .meta-grid { grid-template-columns: 1fr; }
+      .right-row { grid-template-columns: 1fr; gap: 4px; }
+      .right-label { padding-top: 0; }
     }
   </style>
 </head>
@@ -305,7 +423,7 @@
       <li><a href="#transferts">Transferts hors Union Européenne</a></li>
       <li><a href="#conservation">Durée de conservation</a></li>
       <li><a href="#ia">Utilisation de l'intelligence artificielle</a></li>
-      <li><a href="#droits">Vos droits</a></li>
+      <li><a href="#droits">Vos droits — Les 8 droits RGPD détaillés</a></li>
       <li><a href="#cnil">Droit de réclamation auprès de la CNIL</a></li>
       <li><a href="#cookies">Cookies et traceurs</a></li>
       <li><a href="#contact-rgpd">Contact</a></li>
@@ -516,46 +634,258 @@
 
   <!-- 8. DROITS -->
   <div class="section" id="droits">
-    <h2><span class="num">8</span> Vos droits</h2>
-    <p>Conformément au Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679), tu disposes des droits suivants sur tes données personnelles :</p>
-    <table class="data-table">
-      <thead>
-        <tr>
-          <th>Droit</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Droit d'accès</strong> (art. 15)</td>
-          <td>Obtenir une copie de toutes tes données personnelles que je détiens</td>
-        </tr>
-        <tr>
-          <td><strong>Droit de rectification</strong> (art. 16)</td>
-          <td>Corriger des données inexactes ou incomplètes</td>
-        </tr>
-        <tr>
-          <td><strong>Droit à l'effacement</strong> (art. 17)</td>
-          <td>Demander la suppression de tes données ("droit à l'oubli")</td>
-        </tr>
-        <tr>
-          <td><strong>Droit à la portabilité</strong> (art. 20)</td>
-          <td>Recevoir tes données dans un format structuré et lisible par machine</td>
-        </tr>
-        <tr>
-          <td><strong>Droit d'opposition</strong> (art. 21)</td>
-          <td>T'opposer au traitement de tes données</td>
-        </tr>
-        <tr>
-          <td><strong>Droit de retrait du consentement</strong> (art. 7)</td>
-          <td>Retirer ton consentement à tout moment, sans affecter les traitements passés</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="info-box">
-      <strong>Comment exercer vos droits</strong>
-      Envoie un email à <a href="mailto:q.siruguet@gmail.com">q.siruguet@gmail.com</a> en précisant ta demande et en joignant une copie de ta pièce d'identité si nécessaire. Je m'engage à répondre dans un délai de <strong>30 jours</strong>.
+    <h2><span class="num">8</span> Vos droits — Les 8 droits RGPD détaillés</h2>
+
+    <!-- Intro / préambule -->
+    <div class="droits-intro">
+      <div class="meta-grid">
+        <div class="meta-item">
+          <span class="meta-key">Responsable de traitement</span>
+          <span class="meta-val">Quentin S. — Trader indépendant &amp; formateur en trading systématique</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-key">Contact pour exercer vos droits</span>
+          <span class="meta-val"><a href="mailto:q.siruguet@gmail.com">q.siruguet@gmail.com</a></span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-key">Délai de réponse légal</span>
+          <span class="meta-val"><strong>1 mois</strong> maximum (extensible à 3 mois pour les demandes complexes)</span>
+        </div>
+      </div>
+      <p>En tant que responsable du traitement de tes données personnelles (formulaire de contact, communauté Discord, achat de la formation, échanges sur Twitter/X), je m'engage à respecter et faciliter l'exercice des huit droits que te confère le <strong>Règlement Général sur la Protection des Données (RGPD — UE 2016/679)</strong>.</p>
+      <br/>
+      <p>Pour exercer l'un de ces droits, envoie un email à <a href="mailto:q.siruguet@gmail.com">q.siruguet@gmail.com</a> en précisant : ton nom et prénom, ton email utilisé lors du contact, le droit que tu souhaites exercer, et toute précision utile. <strong>Aucun motif n'est requis</strong> (sauf pour le droit d'opposition).</p>
     </div>
+
+    <!-- Droit 1 -->
+    <div class="right-card">
+      <div class="right-card-header">
+        <span class="right-num">1</span>
+        <span class="right-title">Droit d'accès <span class="right-article">— Art. 15 RGPD</span></span>
+      </div>
+      <div class="right-body">
+        <div class="right-row">
+          <span class="right-label">Ce que c'est</span>
+          <span class="right-value">Le droit de savoir si je détiens des données personnelles te concernant et d'en obtenir une copie complète, ainsi que toutes les informations sur leur traitement (finalité, durée de conservation, destinataires, sources).</span>
+        </div>
+        <div class="right-row">
+          <span class="right-label">Comment l'exercer</span>
+          <span class="right-value">Email à <a href="mailto:q.siruguet@gmail.com">q.siruguet@gmail.com</a> avec pour objet <strong>« Demande d'accès RGPD »</strong>. Je te transmettrai un export structuré de toutes les données te concernant.</span>
+        </div>
+        <div class="right-row">
+          <span class="right-label">Délai</span>
+          <span class="right-value"><strong>1 mois</strong> maximum.</span>
+        </div>
+        <div class="example-box">
+          <strong>Exemple concret :</strong> Tu as rempli le formulaire de contact il y a 8 mois et tu veux savoir ce que je détiens. Je t'envoie un PDF avec ta ligne complète (prénom, nom, email, message, date) + l'historique de nos échanges email + ton statut Discord si tu es membre + le contenu transmis à OpenAI lors de la rédaction de ton email de confirmation.
+        </div>
+      </div>
+    </div>
+
+    <!-- Droit 2 -->
+    <div class="right-card">
+      <div class="right-card-header">
+        <span class="right-num">2</span>
+        <span class="right-title">Droit de rectification <span class="right-article">— Art. 16 RGPD</span></span>
+      </div>
+      <div class="right-body">
+        <div class="right-row">
+          <span class="right-label">Ce que c'est</span>
+          <span class="right-value">Le droit de corriger une donnée inexacte ou de compléter une donnée incomplète te concernant. Tu n'as pas à justifier ta demande : si tu signales une erreur, je dois la corriger.</span>
+        </div>
+        <div class="right-row">
+          <span class="right-label">Comment l'exercer</span>
+          <span class="right-value">Email à <a href="mailto:q.siruguet@gmail.com">q.siruguet@gmail.com</a> avec objet <strong>« Demande de rectification RGPD »</strong>, en précisant la donnée erronée et la correction à apporter.</span>
+        </div>
+        <div class="right-row">
+          <span class="right-label">Délai</span>
+          <span class="right-value"><strong>1 mois</strong> maximum.</span>
+        </div>
+        <div class="example-box">
+          <strong>Exemple concret :</strong> Tu as fait une faute de frappe dans ton email lors de l'inscription au Discord et tu ne reçois plus mes emails. Tu m'écris, je corrige immédiatement la ligne dans Google Sheets et je te confirme par retour de mail.
+        </div>
+      </div>
+    </div>
+
+    <!-- Droit 3 -->
+    <div class="right-card">
+      <div class="right-card-header">
+        <span class="right-num">3</span>
+        <span class="right-title">Droit à l'effacement <span class="right-article">— « Droit à l'oubli » — Art. 17 RGPD</span></span>
+      </div>
+      <div class="right-body">
+        <div class="right-row">
+          <span class="right-label">Ce que c'est</span>
+          <span class="right-value">Le droit d'obtenir la suppression de l'ensemble de tes données personnelles, notamment lorsque tu retires ton consentement, que les données ne sont plus nécessaires, ou que tu t'opposes au traitement. Certaines exceptions existent (obligations légales comptables, par exemple).</span>
+        </div>
+        <div class="right-row">
+          <span class="right-label">Comment l'exercer</span>
+          <span class="right-value">Email à <a href="mailto:q.siruguet@gmail.com">q.siruguet@gmail.com</a> avec objet <strong>« Demande de suppression RGPD »</strong>.</span>
+        </div>
+        <div class="right-row">
+          <span class="right-label">Délai</span>
+          <span class="right-value"><strong>1 mois</strong> maximum.</span>
+        </div>
+        <div class="example-box">
+          <strong>Exemple concret :</strong> Tu as rempli le formulaire il y a 6 mois mais tu n'es plus intéressé par la formation. Je supprime ta ligne dans Google Sheets, je te retire de la liste de diffusion email, je t'exclus du Discord si tu y es, et je te confirme par retour. Note : les emails transmis à OpenAI ne sont pas conservés au-delà de 30 jours par OpenAI (cf. API Data Usage Policy). <em>Un template de réponse complet est disponible en bas de cette section.</em>
+        </div>
+      </div>
+    </div>
+
+    <!-- Droit 4 -->
+    <div class="right-card">
+      <div class="right-card-header">
+        <span class="right-num">4</span>
+        <span class="right-title">Droit à la limitation du traitement <span class="right-article">— Art. 18 RGPD</span></span>
+      </div>
+      <div class="right-body">
+        <div class="right-row">
+          <span class="right-label">Ce que c'est</span>
+          <span class="right-value">Le droit de « geler » l'usage de tes données pendant une période donnée, sans les supprimer. Utile lorsque tu contestes l'exactitude des données, ou pendant qu'une demande d'opposition est instruite.</span>
+        </div>
+        <div class="right-row">
+          <span class="right-label">Comment l'exercer</span>
+          <span class="right-value">Email à <a href="mailto:q.siruguet@gmail.com">q.siruguet@gmail.com</a> avec objet <strong>« Demande de limitation RGPD »</strong> et indication de la durée souhaitée.</span>
+        </div>
+        <div class="right-row">
+          <span class="right-label">Délai</span>
+          <span class="right-value"><strong>1 mois</strong> maximum.</span>
+        </div>
+        <div class="example-box">
+          <strong>Exemple concret :</strong> Tu contestes une information que je détiens sur toi (par exemple, je t'ai catégorisé comme « lead non sérieux » à tort). Le temps que je vérifie, tu peux me demander de ne plus utiliser ces données pour te contacter. Je marque ton enregistrement avec un statut <code style="background:rgba(255,255,255,0.08);padding:1px 6px;border-radius:4px;font-size:12px;">Limité</code> et aucune action commerciale n'est entreprise jusqu'à résolution.
+        </div>
+      </div>
+    </div>
+
+    <!-- Droit 5 -->
+    <div class="right-card">
+      <div class="right-card-header">
+        <span class="right-num">5</span>
+        <span class="right-title">Droit à la portabilité <span class="right-article">— Art. 20 RGPD</span></span>
+      </div>
+      <div class="right-body">
+        <div class="right-row">
+          <span class="right-label">Ce que c'est</span>
+          <span class="right-value">Le droit de récupérer tes données dans un format structuré, couramment utilisé et lisible par machine (CSV, JSON), pour les transmettre à un autre responsable de traitement (par exemple un autre formateur ou une autre plateforme).</span>
+        </div>
+        <div class="right-row">
+          <span class="right-label">Comment l'exercer</span>
+          <span class="right-value">Email à <a href="mailto:q.siruguet@gmail.com">q.siruguet@gmail.com</a> avec objet <strong>« Demande de portabilité RGPD »</strong>.</span>
+        </div>
+        <div class="right-row">
+          <span class="right-label">Délai</span>
+          <span class="right-value"><strong>1 mois</strong> maximum.</span>
+        </div>
+        <div class="example-box">
+          <strong>Exemple concret :</strong> Tu as suivi ma formation et tu veux récupérer l'ensemble de tes données (profil, historique d'échanges, posts Discord) pour les importer chez un autre formateur ou dans ton propre archivage. Je t'envoie un fichier CSV et un export JSON contenant tous tes échanges structurés.
+        </div>
+      </div>
+    </div>
+
+    <!-- Droit 6 -->
+    <div class="right-card">
+      <div class="right-card-header">
+        <span class="right-num">6</span>
+        <span class="right-title">Droit d'opposition <span class="right-article">— Art. 21 RGPD</span></span>
+      </div>
+      <div class="right-body">
+        <div class="right-row">
+          <span class="right-label">Ce que c'est</span>
+          <span class="right-value">Le droit de t'opposer, à tout moment, à un traitement de tes données fondé sur l'intérêt légitime. Pour la prospection commerciale (DM Twitter/X, emails marketing), l'opposition est <strong>inconditionnelle et immédiate</strong>.</span>
+        </div>
+        <div class="right-row">
+          <span class="right-label">Comment l'exercer</span>
+          <span class="right-value">Email à <a href="mailto:q.siruguet@gmail.com">q.siruguet@gmail.com</a> avec objet <strong>« Opposition RGPD »</strong>. Pour les emails marketing, un simple lien de désinscription en bas des emails fonctionne aussi.</span>
+        </div>
+        <div class="right-row">
+          <span class="right-label">Délai</span>
+          <span class="right-value"><strong>1 mois</strong> maximum (<strong>immédiat</strong> pour la prospection commerciale).</span>
+        </div>
+        <div class="example-box">
+          <strong>Exemple concret :</strong> Tu reçois mes emails de relance commerciale après avoir laissé un message sur le formulaire et tu ne veux plus en recevoir. Tu te désinscris d'un clic ou tu m'écris : je te retire instantanément de la liste de prospection, sans pour autant supprimer ta ligne (qui reste jusqu'à la purge automatique à 12 mois).
+        </div>
+      </div>
+    </div>
+
+    <!-- Droit 7 -->
+    <div class="right-card">
+      <div class="right-card-header">
+        <span class="right-num">7</span>
+        <span class="right-title">Droit lié aux décisions automatisées &amp; au profilage <span class="right-article">— Art. 22 RGPD</span></span>
+      </div>
+      <div class="right-body">
+        <div class="right-row">
+          <span class="right-label">Ce que c'est</span>
+          <span class="right-value">Le droit de ne pas faire l'objet d'une décision <strong>entièrement automatisée</strong> produisant des effets juridiques ou t'affectant significativement. Tu as le droit d'obtenir une intervention humaine, d'exprimer ton point de vue et de contester la décision.</span>
+        </div>
+        <div class="right-row">
+          <span class="right-label">Comment l'exercer</span>
+          <span class="right-value">Email à <a href="mailto:q.siruguet@gmail.com">q.siruguet@gmail.com</a> avec objet <strong>« Demande d'intervention humaine — décision automatisée RGPD »</strong>.</span>
+        </div>
+        <div class="right-row">
+          <span class="right-label">Délai</span>
+          <span class="right-value"><strong>1 mois</strong> maximum.</span>
+        </div>
+        <div class="example-box">
+          <strong>Exemple concret :</strong> L'email de confirmation que tu reçois après ton message via le formulaire est rédigé par GPT-4o (OpenAI). Tu peux me demander à ce que toutes nos prochaines interactions soient rédigées humainement, sans assistance IA. Je note cette préférence dans ton enregistrement et t'écris personnellement à chaque échange. Note : aucune décision uniquement automatisée ne te concerne actuellement (pas de scoring IA pour l'accès à la formation).
+        </div>
+      </div>
+    </div>
+
+    <!-- Droit 8 -->
+    <div class="right-card">
+      <div class="right-card-header">
+        <span class="right-num">8</span>
+        <span class="right-title">Droit d'introduire une réclamation auprès de la CNIL <span class="right-article">— Art. 77 RGPD</span></span>
+      </div>
+      <div class="right-body">
+        <div class="right-row">
+          <span class="right-label">Ce que c'est</span>
+          <span class="right-value">Si tu estimes que tes droits RGPD ne sont pas respectés (réponse insatisfaisante, absence de réponse dans le délai d'un mois, traitement abusif), tu peux saisir la <strong>Commission Nationale de l'Informatique et des Libertés (CNIL)</strong>.</span>
+        </div>
+        <div class="right-row">
+          <span class="right-label">Comment l'exercer</span>
+          <span class="right-value">Démarche en ligne sur <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener">www.cnil.fr/fr/plaintes</a> ou par courrier : CNIL — 3 Place de Fontenoy, TSA 80715, 75334 PARIS CEDEX 07. Je t'encourage à me contacter d'abord pour résoudre à l'amiable.</span>
+        </div>
+        <div class="right-row">
+          <span class="right-label">Délai</span>
+          <span class="right-value">Variable côté CNIL, généralement plusieurs mois.</span>
+        </div>
+        <div class="example-box">
+          <strong>Exemple concret :</strong> Tu m'as demandé la suppression de tes données il y a 6 semaines, je n'ai pas répondu et tu reçois toujours mes emails de prospection. Tu peux porter plainte auprès de la CNIL qui me notifiera et pourra m'imposer une mise en conformité, voire une amende (jusqu'à 4 % du chiffre d'affaires annuel ou 20 millions d'euros, le montant le plus élevé étant retenu).
+        </div>
+      </div>
+    </div>
+
+    <!-- Template email effacement -->
+    <div class="template-section">
+      <div class="template-header">📧 Template d'email — Réponse à une demande d'effacement (Art. 17)</div>
+      <div class="template-body">
+        <p><strong>Objet :</strong> Confirmation de suppression de tes données personnelles — Demande RGPD du [date]</p>
+        <br/>
+        <p>Salut [Prénom],</p>
+        <br/>
+        <p>Je reviens vers toi suite à ta demande de suppression de tes données personnelles reçue le <strong>[date de réception]</strong>.</p>
+        <br/>
+        <p>J'ai bien procédé à l'effacement de toutes les données te concernant dans mes systèmes :</p>
+        <ul>
+          <li><strong>Google Sheets (base leads)</strong> : ligne supprimée définitivement le [date].</li>
+          <li><strong>Liste de diffusion email</strong> : désinscription effective. Tu ne recevras plus aucun email de ma part.</li>
+          <li><strong>Communauté Discord</strong> : ton compte a été retiré du serveur (le cas échéant).</li>
+          <li><strong>Logs d'exécution n8n</strong> : les exécutions contenant tes données seront purgées automatiquement sous 30 jours.</li>
+          <li><strong>OpenAI (sous-traitant IA)</strong> : les contenus transmis ne sont pas conservés au-delà de 30 jours par OpenAI conformément à leur API Data Usage Policy. Aucune action de suppression n'est requise de mon côté.</li>
+        </ul>
+        <br/>
+        <p><strong>Données conservées par obligation légale :</strong> si tu as effectué un achat (497€), je conserve la facture associée pendant 10 ans (obligation comptable — Article L123-22 du Code de commerce). Cette conservation se limite strictement aux mentions légales obligatoires et ne sera plus utilisée à des fins de prospection.</p>
+        <br/>
+        <p>Si tu constates malgré tout la persistance d'une donnée te concernant, n'hésite pas à me l'écrire en réponse à ce mail : je corrigerai sous 48h.</p>
+        <br/>
+        <p>Pour rappel, tu disposes également du droit d'introduire une réclamation auprès de la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>) si tu estimes que cette suppression n'a pas été effectuée correctement.</p>
+        <br/>
+        <p>Bien cordialement,<br/><strong>Quentin</strong><br/>Quentin S. — Trader indépendant &amp; formateur en trading systématique<br/><a href="mailto:q.siruguet@gmail.com">q.siruguet@gmail.com</a></p>
+      </div>
+    </div>
+
   </div>
 
   <!-- 9. CNIL -->

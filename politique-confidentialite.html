@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de confidentialité — Trading System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0b0f1a;
+      --card: #111827;
+      --green: #22d3a5;
+      --white: #ffffff;
+      --gray: #9ca3af;
+      --gray-light: #d1d5db;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--gray-light);
+      line-height: 1.75;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11,15,26,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-back {
+      font-size: 14px;
+      color: var(--green);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: opacity 0.2s;
+    }
+
+    .nav-back:hover { opacity: 0.8; }
+
+    /* ── HERO ── */
+    .page-hero {
+      padding: 64px 5% 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-hero-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(34,211,165,0.1);
+      color: var(--green);
+      border: 1px solid rgba(34,211,165,0.25);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .page-hero .updated {
+      font-size: 13px;
+      color: var(--gray);
+    }
+
+    /* ── CONTENT ── */
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 56px 5% 100px;
+    }
+
+    /* Table des matières */
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 56px;
+    }
+
+    .toc h2 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 16px;
+    }
+
+    .toc ol {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .toc li { font-size: 14px; }
+
+    .toc a {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .toc a:hover { text-decoration: underline; }
+
+    /* Sections */
+    .section {
+      margin-bottom: 56px;
+      scroll-margin-top: 80px;
+    }
+
+    .section h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section h2 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: rgba(34,211,165,0.12);
+      color: var(--green);
+      border-radius: 50%;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .section p { margin-bottom: 14px; font-size: 15px; }
+    .section p:last-child { margin-bottom: 0; }
+
+    .section ul, .section ol {
+      padding-left: 20px;
+      margin-bottom: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .section li { font-size: 15px; }
+
+    /* Table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      background: rgba(34,211,165,0.08);
+      color: var(--white);
+      font-weight: 600;
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* Info box */
+    .info-box {
+      background: rgba(34,211,165,0.05);
+      border: 1px solid rgba(34,211,165,0.2);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 20px 0;
+      font-size: 14px;
+    }
+
+    .info-box strong {
+      color: var(--green);
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Warning box */
+    .ai-box {
+      background: rgba(251,191,36,0.05);
+      border: 1px solid rgba(251,191,36,0.2);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 20px 0;
+      font-size: 14px;
+    }
+
+    .ai-box strong {
+      color: #fbbf24;
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    a {
+      color: var(--green);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    a:hover { opacity: 0.8; }
+
+    strong { color: var(--white); font-weight: 600; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #060810;
+      border-top: 1px solid var(--border);
+      padding: 32px 5%;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--gray);
+    }
+
+    footer a { color: var(--green); }
+
+    @media (max-width: 600px) {
+      .data-table { font-size: 13px; }
+      .data-table th, .data-table td { padding: 10px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/index.html" class="nav-brand">Trading System</a>
+  <a href="/index.html" class="nav-back">← Retour à l'accueil</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="tag">RGPD</div>
+    <h1>Politique de confidentialité</h1>
+    <p class="updated">Dernière mise à jour : 30 avril 2026</p>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- TABLE DES MATIÈRES -->
+  <div class="toc">
+    <h2>Sommaire</h2>
+    <ol>
+      <li><a href="#responsable">Identité du responsable de traitement</a></li>
+      <li><a href="#donnees">Données collectées et finalités</a></li>
+      <li><a href="#base-legale">Base légale des traitements</a></li>
+      <li><a href="#destinataires">Destinataires des données</a></li>
+      <li><a href="#transferts">Transferts hors Union Européenne</a></li>
+      <li><a href="#conservation">Durée de conservation</a></li>
+      <li><a href="#ia">Utilisation de l'intelligence artificielle</a></li>
+      <li><a href="#droits">Vos droits</a></li>
+      <li><a href="#cnil">Droit de réclamation auprès de la CNIL</a></li>
+      <li><a href="#cookies">Cookies et traceurs</a></li>
+      <li><a href="#contact-rgpd">Contact</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. RESPONSABLE -->
+  <div class="section" id="responsable">
+    <h2><span class="num">1</span> Identité du responsable de traitement</h2>
+    <div class="info-box">
+      <strong>Responsable de traitement</strong>
+      <strong style="color: var(--white); text-transform: none; letter-spacing: 0; font-size: 15px;">Quentin S.</strong><br/>
+      Particulier / Auto-entrepreneur<br/>
+      France<br/>
+      Email : <a href="mailto:contact@trading-system.fr">contact@trading-system.fr</a>
+    </div>
+    <p>Le responsable de traitement est la personne physique ou morale qui détermine les finalités et les moyens du traitement de tes données personnelles. Dans le cadre de ce site, il s'agit de Quentin S., agissant à titre personnel dans le cadre d'une activité de formation au trading.</p>
+  </div>
+
+  <!-- 2. DONNÉES COLLECTÉES -->
+  <div class="section" id="donnees">
+    <h2><span class="num">2</span> Données collectées et finalités</h2>
+    <p>Les données suivantes sont collectées via le formulaire de contact du site :</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Donnée</th>
+          <th>Finalité</th>
+          <th>Obligatoire</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Prénom</strong></td>
+          <td>Personnalisation de la réponse</td>
+          <td>Oui</td>
+        </tr>
+        <tr>
+          <td><strong>Nom</strong></td>
+          <td>Identification de la personne</td>
+          <td>Oui</td>
+        </tr>
+        <tr>
+          <td><strong>Adresse email</strong></td>
+          <td>Envoi de la présentation et de la réponse personnalisée</td>
+          <td>Oui</td>
+        </tr>
+        <tr>
+          <td><strong>Message</strong></td>
+          <td>Analyse de la situation trading pour personnaliser la réponse ; traitement par IA (OpenAI)</td>
+          <td>Non</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Aucune donnée sensible (santé, opinions politiques, données bancaires, etc.) n'est collectée via ce formulaire.</p>
+  </div>
+
+  <!-- 3. BASE LÉGALE -->
+  <div class="section" id="base-legale">
+    <h2><span class="num">3</span> Base légale des traitements</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Traitement</th>
+          <th>Base légale (RGPD, art. 6)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Répondre à ta demande de contact</td>
+          <td>Consentement (art. 6.1.a) — case à cocher</td>
+        </tr>
+        <tr>
+          <td>Envoi de la présentation de la méthode</td>
+          <td>Consentement (art. 6.1.a)</td>
+        </tr>
+        <tr>
+          <td>Analyse du message par IA (OpenAI)</td>
+          <td>Consentement (art. 6.1.a) — mention explicite dans le formulaire</td>
+        </tr>
+        <tr>
+          <td>Statistiques d'utilisation du site (Vercel Analytics)</td>
+          <td>Intérêt légitime (art. 6.1.f) — données agrégées et anonymisées</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Tu peux retirer ton consentement à tout moment en adressant un email à <a href="mailto:contact@trading-system.fr">contact@trading-system.fr</a>. Le retrait du consentement ne remet pas en cause la licéité des traitements effectués avant ce retrait.</p>
+  </div>
+
+  <!-- 4. DESTINATAIRES -->
+  <div class="section" id="destinataires">
+    <h2><span class="num">4</span> Destinataires des données</h2>
+    <p>Tes données peuvent être transmises aux sous-traitants suivants, dans le strict cadre de la finalité pour laquelle elles ont été collectées :</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Destinataire</th>
+          <th>Rôle</th>
+          <th>Localisation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>n8n (n8n GmbH)</strong></td>
+          <td>Réception et routage des données du formulaire (webhook)</td>
+          <td>Allemagne (UE)</td>
+        </tr>
+        <tr>
+          <td><strong>OpenAI</strong></td>
+          <td>Analyse du message pour personnaliser la réponse (IA GPT-4o)</td>
+          <td>États-Unis</td>
+        </tr>
+        <tr>
+          <td><strong>Google (Gmail)</strong></td>
+          <td>Envoi de la réponse par email</td>
+          <td>États-Unis / UE</td>
+        </tr>
+        <tr>
+          <td><strong>Vercel Inc.</strong></td>
+          <td>Hébergement du site web</td>
+          <td>États-Unis / UE</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Tes données ne sont jamais vendues, louées ou cédées à des tiers à des fins commerciales.</p>
+  </div>
+
+  <!-- 5. TRANSFERTS HORS UE -->
+  <div class="section" id="transferts">
+    <h2><span class="num">5</span> Transferts hors Union Européenne</h2>
+    <p>Certains de nos sous-traitants sont basés hors de l'Union Européenne. Les transferts de données vers ces pays sont encadrés par les garanties suivantes :</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Sous-traitant</th>
+          <th>Pays</th>
+          <th>Garantie</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>OpenAI</strong></td>
+          <td>États-Unis</td>
+          <td>Clauses Contractuelles Types (CCT) de la Commission européenne — <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">Politique de confidentialité OpenAI</a></td>
+        </tr>
+        <tr>
+          <td><strong>Google (Gmail)</strong></td>
+          <td>États-Unis</td>
+          <td>Data Privacy Framework (DPF) EU-US + CCT — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Politique de confidentialité Google</a></td>
+        </tr>
+        <tr>
+          <td><strong>Vercel Inc.</strong></td>
+          <td>États-Unis</td>
+          <td>Clauses Contractuelles Types (CCT) — <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Politique de confidentialité Vercel</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Tu peux obtenir une copie de ces garanties en écrivant à <a href="mailto:contact@trading-system.fr">contact@trading-system.fr</a>.</p>
+  </div>
+
+  <!-- 6. CONSERVATION -->
+  <div class="section" id="conservation">
+    <h2><span class="num">6</span> Durée de conservation</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Catégorie de données</th>
+          <th>Durée de conservation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Données du formulaire (prénom, nom, email, message)</td>
+          <td><strong>12 mois</strong> à compter de la date de soumission</td>
+        </tr>
+        <tr>
+          <td>Emails échangés</td>
+          <td><strong>12 mois</strong> à compter du dernier échange</td>
+        </tr>
+        <tr>
+          <td>Logs du webhook n8n</td>
+          <td><strong>30 jours</strong> (logs techniques automatiquement purgés)</td>
+        </tr>
+        <tr>
+          <td>Données de navigation (Vercel Analytics)</td>
+          <td><strong>90 jours</strong> — données agrégées et anonymisées</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>À l'issue de ces délais, les données sont supprimées ou anonymisées de façon irréversible.</p>
+  </div>
+
+  <!-- 7. IA -->
+  <div class="section" id="ia">
+    <h2><span class="num">7</span> Utilisation de l'intelligence artificielle</h2>
+    <div class="ai-box">
+      <strong>⚠️ Information importante — Traitement par IA</strong>
+      Ton message est transmis à l'API d'<strong>OpenAI (modèle GPT-4o)</strong> pour analyser ta situation de trading et générer une réponse personnalisée. Ce traitement est effectué dans le seul but d'améliorer la qualité et la pertinence de la réponse qui te sera envoyée.
+    </div>
+    <p>Conformément aux engagements d'OpenAI vis-à-vis des professionnels (API usage policy) :</p>
+    <ul>
+      <li>Tes données ne sont <strong>pas utilisées pour entraîner les modèles</strong> d'OpenAI via l'API (Zero Data Retention disponible sur demande).</li>
+      <li>Les données sont traitées de manière <strong>confidentielle</strong> et ne sont pas partagées avec d'autres utilisateurs de l'API.</li>
+      <li>OpenAI peut conserver les données de l'API jusqu'à <strong>30 jours</strong> à des fins de sécurité et de surveillance des abus, puis les supprime.</li>
+    </ul>
+    <p>Pour plus d'informations : <a href="https://openai.com/policies/api-data-usage-policies" target="_blank" rel="noopener">Politique d'utilisation des données API d'OpenAI</a>.</p>
+  </div>
+
+  <!-- 8. DROITS -->
+  <div class="section" id="droits">
+    <h2><span class="num">8</span> Vos droits</h2>
+    <p>Conformément au Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679), tu disposes des droits suivants sur tes données personnelles :</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Droit</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Droit d'accès</strong> (art. 15)</td>
+          <td>Obtenir une copie de toutes tes données personnelles que je détiens</td>
+        </tr>
+        <tr>
+          <td><strong>Droit de rectification</strong> (art. 16)</td>
+          <td>Corriger des données inexactes ou incomplètes</td>
+        </tr>
+        <tr>
+          <td><strong>Droit à l'effacement</strong> (art. 17)</td>
+          <td>Demander la suppression de tes données ("droit à l'oubli")</td>
+        </tr>
+        <tr>
+          <td><strong>Droit à la portabilité</strong> (art. 20)</td>
+          <td>Recevoir tes données dans un format structuré et lisible par machine</td>
+        </tr>
+        <tr>
+          <td><strong>Droit d'opposition</strong> (art. 21)</td>
+          <td>T'opposer au traitement de tes données</td>
+        </tr>
+        <tr>
+          <td><strong>Droit de retrait du consentement</strong> (art. 7)</td>
+          <td>Retirer ton consentement à tout moment, sans affecter les traitements passés</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="info-box">
+      <strong>Comment exercer vos droits</strong>
+      Envoie un email à <a href="mailto:contact@trading-system.fr">contact@trading-system.fr</a> en précisant ta demande et en joignant une copie de ta pièce d'identité si nécessaire. Je m'engage à répondre dans un délai de <strong>30 jours</strong>.
+    </div>
+  </div>
+
+  <!-- 9. CNIL -->
+  <div class="section" id="cnil">
+    <h2><span class="num">9</span> Droit de réclamation auprès de la CNIL</h2>
+    <p>Si tu estimes que le traitement de tes données personnelles ne respecte pas la réglementation applicable, tu as le droit d'introduire une réclamation auprès de l'autorité de contrôle compétente :</p>
+    <div class="info-box">
+      <strong>Commission Nationale de l'Informatique et des Libertés (CNIL)</strong>
+      3 Place de Fontenoy — TSA 80715 — 75334 Paris Cedex 07<br/>
+      Tél. : 01 53 73 22 22<br/>
+      Site : <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a><br/>
+      Formulaire de plainte en ligne : <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener">cnil.fr/fr/plaintes</a>
+    </div>
+  </div>
+
+  <!-- 10. COOKIES -->
+  <div class="section" id="cookies">
+    <h2><span class="num">10</span> Cookies et traceurs</h2>
+    <p>Ce site utilise un nombre minimal de traceurs :</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Traceur</th>
+          <th>Finalité</th>
+          <th>Durée</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Vercel Analytics</strong></td>
+          <td>Statistiques de visites anonymisées (pas de cookie déposé)</td>
+          <td>Session / 90 jours (agrégé)</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Aucun cookie publicitaire ou de profilage n'est utilisé sur ce site. Aucun réseau social tiers n'est intégré (pas de pixel Facebook, Google Ads, etc.).</p>
+  </div>
+
+  <!-- 11. CONTACT -->
+  <div class="section" id="contact-rgpd">
+    <h2><span class="num">11</span> Contact</h2>
+    <p>Pour toute question relative à cette politique de confidentialité ou à l'exercice de tes droits :</p>
+    <div class="info-box">
+      <strong>Contact RGPD</strong>
+      <a href="mailto:contact@trading-system.fr">contact@trading-system.fr</a><br/>
+      Réponse garantie sous 30 jours maximum.
+    </div>
+    <p>Cette politique de confidentialité est susceptible d'être mise à jour pour refléter les évolutions légales ou les changements dans nos pratiques. La date de dernière mise à jour est indiquée en haut de cette page. En cas de modification substantielle, tu en seras informé par email si tu as précédemment soumis le formulaire de contact.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>Trading System © 2026 — <a href="/index.html">Retour à l'accueil</a> · <a href="/politique-confidentialite.html">Politique de confidentialité</a></p>
+</footer>
+
+</body>
+</html>
